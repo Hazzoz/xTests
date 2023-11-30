@@ -1743,6 +1743,94 @@ typedef enum xtests_runner_flags_t xtests_runner_flags_t;
     (!XTESTS_NS_C_QUAL(xTests_hasRequiredConditionFailed()) &&                          \
     XTESTS_NS_C_QUAL(xtests_testMultibyteStringsN)(__FILE__, __LINE__, XTESTS_GET_FUNCTION_(), "", (expected), (actual), n, XTESTS_NS_C_QUAL(xtestsComparisonApproxNotEqual)))
 
+/** \def XTESTS_TEST_MULTIBYTE_STRING_CONTAIN(expected, actual)
+ *
+ * \ingroup group__xtests__test_functions
+ *
+ * Tests that the string contains the expected sub-sequence.
+ *
+ * \param expected The substring to find with the actual string
+ * \param actual The actual value of the string
+ *
+ * \note This can only be invoked after a successful invocation of
+ *   XTESTS_CASE_BEGIN() and before invocation of XTESTS_CASE_END().
+ */
+#define XTESTS_TEST_MULTIBYTE_STRING_CONTAIN(expected, actual)                          \
+                                                                                        \
+    (!XTESTS_NS_C_QUAL(xTests_hasRequiredConditionFailed()) &&                          \
+    XTESTS_NS_C_QUAL(xtests_testMultibyteStringContains)(__FILE__, __LINE__, XTESTS_GET_FUNCTION_(), "", (expected), (actual), XTESTS_NS_C_QUAL(xtestsComparisonEqual)))
+
+/** \def XTESTS_TEST_MULTIBYTE_STRING_CONTAIN_APPROX(expected, actual)
+ *
+ * \ingroup group__xtests__test_functions
+ *
+ * Tests that the string contains the expected sub-sequence (disregarding
+ * case).
+ *
+ * \param expected The substring to find with the actual string
+ * \param actual The actual value of the string
+ *
+ * \note This can only be invoked after a successful invocation of
+ *   XTESTS_CASE_BEGIN() and before invocation of XTESTS_CASE_END().
+ */
+#define XTESTS_TEST_MULTIBYTE_STRING_CONTAIN_APPROX(expected, actual)                   \
+                                                                                        \
+    (!XTESTS_NS_C_QUAL(xTests_hasRequiredConditionFailed()) &&                          \
+    XTESTS_NS_C_QUAL(xtests_testMultibyteStringContains)(__FILE__, __LINE__, XTESTS_GET_FUNCTION_(), "", (expected), (actual), XTESTS_NS_C_QUAL(xtestsComparisonApproxEqual)))
+
+/** \def XTESTS_TEST_MULTIBYTE_STRING_NOT_CONTAIN(expected, actual)
+ *
+ * \ingroup group__xtests__test_functions
+ *
+ * Tests that the string does not contain the expected sub-sequence.
+ *
+ * \param expected The substring to find with the actual string
+ * \param actual The actual value of the string
+ *
+ * \note This can only be invoked after a successful invocation of
+ *   XTESTS_CASE_BEGIN() and before invocation of XTESTS_CASE_END().
+ */
+#define XTESTS_TEST_MULTIBYTE_STRING_NOT_CONTAIN(expected, actual)                      \
+                                                                                        \
+    (!XTESTS_NS_C_QUAL(xTests_hasRequiredConditionFailed()) &&                          \
+    XTESTS_NS_C_QUAL(xtests_testMultibyteStringContains)(__FILE__, __LINE__, XTESTS_GET_FUNCTION_(), "", (expected), (actual), XTESTS_NS_C_QUAL(xtestsComparisonNotEqual)))
+
+/** \def XTESTS_TEST_MULTIBYTE_STRING_NOT_CONTAIN_APPROX(expected, actual)
+ *
+ * \ingroup group__xtests__test_functions
+ *
+ * Tests that the string does not contain the expected sub-sequence
+ * (disregarding case).
+ *
+ * \param expected The substring to find with the actual string
+ * \param actual The actual value of the string
+ *
+ * \note This can only be invoked after a successful invocation of
+ *   XTESTS_CASE_BEGIN() and before invocation of XTESTS_CASE_END().
+ */
+#define XTESTS_TEST_MULTIBYTE_STRING_NOT_CONTAIN_APPROX(expected, actual)               \
+                                                                                        \
+    (!XTESTS_NS_C_QUAL(xTests_hasRequiredConditionFailed()) &&                          \
+    XTESTS_NS_C_QUAL(xtests_testMultibyteStringContains)(__FILE__, __LINE__, XTESTS_GET_FUNCTION_(), "", (expected), (actual), XTESTS_NS_C_QUAL(xtestsComparisonApproxNotEqual)))
+
+/** \def XTESTS_TEST_MULTIBYTE_STRING_SLICE_EQUAL(expected, actual)
+ *
+ * \ingroup group__xtests__test_functions
+ *
+ * Tests that a (multibyte) string slice is the same length
+ * and has the same contents as an expected value.
+ *
+ * \param expected The expected value of the string
+ * \param actual The string slice to be evaluated
+ *
+ * \note This can only be invoked after a successful invocation of
+ *   XTESTS_CASE_BEGIN() and before invocation of XTESTS_CASE_END().
+ */
+#define XTESTS_TEST_MULTIBYTE_STRING_SLICE_EQUAL(expected, actual)                      \
+                                                                                        \
+    (!XTESTS_NS_C_QUAL(xTests_hasRequiredConditionFailed()) &&                          \
+    XTESTS_NS_C_QUAL(xtests_testMultibyteStringSlice)(__FILE__, __LINE__, XTESTS_GET_FUNCTION_(), "", XTESTS_GET_EXPECTED_SLICE_MB_(expected), (actual).len, (actual).ptr, XTESTS_NS_C_QUAL(xtestsComparisonEqual)))
+
 
 /* /////////////////////////////////////////////////////////
  * test wide strings
@@ -1890,80 +1978,6 @@ typedef enum xtests_runner_flags_t xtests_runner_flags_t;
     (!XTESTS_NS_C_QUAL(xTests_hasRequiredConditionFailed()) &&                          \
     XTESTS_NS_C_QUAL(xtests_testWideStringsN)(__FILE__, __LINE__, XTESTS_GET_FUNCTION_(), "", (expected), (actual), n, XTESTS_NS_C_QUAL(xtestsComparisonApproxNotEqual)))
 
-
-
-/** \def XTESTS_TEST_MULTIBYTE_STRING_CONTAIN(expected, actual)
- *
- * \ingroup group__xtests__test_functions
- *
- * Tests that the string contains the expected sub-sequence.
- *
- * \param expected The substring to find with the actual string
- * \param actual The actual value of the string
- *
- * \note This can only be invoked after a successful invocation of
- *   XTESTS_CASE_BEGIN() and before invocation of XTESTS_CASE_END().
- */
-#define XTESTS_TEST_MULTIBYTE_STRING_CONTAIN(expected, actual)                          \
-                                                                                        \
-    (!XTESTS_NS_C_QUAL(xTests_hasRequiredConditionFailed()) &&                          \
-    XTESTS_NS_C_QUAL(xtests_testMultibyteStringContains)(__FILE__, __LINE__, XTESTS_GET_FUNCTION_(), "", (expected), (actual), XTESTS_NS_C_QUAL(xtestsComparisonEqual)))
-
-/** \def XTESTS_TEST_MULTIBYTE_STRING_CONTAIN_APPROX(expected, actual)
- *
- * \ingroup group__xtests__test_functions
- *
- * Tests that the string contains the expected sub-sequence (disregarding
- * case).
- *
- * \param expected The substring to find with the actual string
- * \param actual The actual value of the string
- *
- * \note This can only be invoked after a successful invocation of
- *   XTESTS_CASE_BEGIN() and before invocation of XTESTS_CASE_END().
- */
-#define XTESTS_TEST_MULTIBYTE_STRING_CONTAIN_APPROX(expected, actual)                   \
-                                                                                        \
-    (!XTESTS_NS_C_QUAL(xTests_hasRequiredConditionFailed()) &&                          \
-    XTESTS_NS_C_QUAL(xtests_testMultibyteStringContains)(__FILE__, __LINE__, XTESTS_GET_FUNCTION_(), "", (expected), (actual), XTESTS_NS_C_QUAL(xtestsComparisonApproxEqual)))
-
-/** \def XTESTS_TEST_MULTIBYTE_STRING_NOT_CONTAIN(expected, actual)
- *
- * \ingroup group__xtests__test_functions
- *
- * Tests that the string does not contain the expected sub-sequence.
- *
- * \param expected The substring to find with the actual string
- * \param actual The actual value of the string
- *
- * \note This can only be invoked after a successful invocation of
- *   XTESTS_CASE_BEGIN() and before invocation of XTESTS_CASE_END().
- */
-#define XTESTS_TEST_MULTIBYTE_STRING_NOT_CONTAIN(expected, actual)                      \
-                                                                                        \
-    (!XTESTS_NS_C_QUAL(xTests_hasRequiredConditionFailed()) &&                          \
-    XTESTS_NS_C_QUAL(xtests_testMultibyteStringContains)(__FILE__, __LINE__, XTESTS_GET_FUNCTION_(), "", (expected), (actual), XTESTS_NS_C_QUAL(xtestsComparisonNotEqual)))
-
-/** \def XTESTS_TEST_MULTIBYTE_STRING_NOT_CONTAIN_APPROX(expected, actual)
- *
- * \ingroup group__xtests__test_functions
- *
- * Tests that the string does not contain the expected sub-sequence
- * (disregarding case).
- *
- * \param expected The substring to find with the actual string
- * \param actual The actual value of the string
- *
- * \note This can only be invoked after a successful invocation of
- *   XTESTS_CASE_BEGIN() and before invocation of XTESTS_CASE_END().
- */
-#define XTESTS_TEST_MULTIBYTE_STRING_NOT_CONTAIN_APPROX(expected, actual)               \
-                                                                                        \
-    (!XTESTS_NS_C_QUAL(xTests_hasRequiredConditionFailed()) &&                          \
-    XTESTS_NS_C_QUAL(xtests_testMultibyteStringContains)(__FILE__, __LINE__, XTESTS_GET_FUNCTION_(), "", (expected), (actual), XTESTS_NS_C_QUAL(xtestsComparisonApproxNotEqual)))
-
-
-
 /** \def XTESTS_TEST_WIDE_STRING_CONTAIN(expected, actual)
  *
  * \ingroup group__xtests__test_functions
@@ -2032,30 +2046,6 @@ typedef enum xtests_runner_flags_t xtests_runner_flags_t;
                                                                                         \
     (!XTESTS_NS_C_QUAL(xTests_hasRequiredConditionFailed()) &&                          \
     XTESTS_NS_C_QUAL(xtests_testWideStringContains)(__FILE__, __LINE__, XTESTS_GET_FUNCTION_(), "", (expected), (actual), XTESTS_NS_C_QUAL(xtestsComparisonApproxNotEqual)))
-
-
-
-/* /////////////////////////////////////////////////////////
- * test string slices
- */
-
-/** \def XTESTS_TEST_MULTIBYTE_STRING_SLICE_EQUAL(expected, actual)
- *
- * \ingroup group__xtests__test_functions
- *
- * Tests that a (multibyte) string slice is the same length
- * and has the same contents as an expected value.
- *
- * \param expected The expected value of the string
- * \param actual The string slice to be evaluated
- *
- * \note This can only be invoked after a successful invocation of
- *   XTESTS_CASE_BEGIN() and before invocation of XTESTS_CASE_END().
- */
-#define XTESTS_TEST_MULTIBYTE_STRING_SLICE_EQUAL(expected, actual)                      \
-                                                                                        \
-    (!XTESTS_NS_C_QUAL(xTests_hasRequiredConditionFailed()) &&                          \
-    XTESTS_NS_C_QUAL(xtests_testMultibyteStringSlice)(__FILE__, __LINE__, XTESTS_GET_FUNCTION_(), "", XTESTS_GET_EXPECTED_SLICE_MB_(expected), (actual).len, (actual).ptr, XTESTS_NS_C_QUAL(xtestsComparisonEqual)))
 
 /** \def XTESTS_TEST_WIDE_STRING_SLICE_EQUAL(expected, actual)
  *
