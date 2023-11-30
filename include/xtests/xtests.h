@@ -85,7 +85,7 @@
 #define _XTESTS_VER             0x001404ff
 
 /* /////////////////////////////////////////////////////////////////////////
- * Includes - 1
+ * includes - 1
  */
 
 #ifndef STLSOFT_INCL_STLSOFT_H_STLSOFT
@@ -116,7 +116,7 @@
 #endif /* compiler */
 
 /* /////////////////////////////////////////////////////////////////////////
- * Includes - 2
+ * includes - 2
  */
 
 #ifdef __cplusplus
@@ -423,14 +423,14 @@ namespace c
 
 
  /* function pointer casts */
-# define XTESTS_VOID_FUNCTION_CAST_(f)          stlsoft_c_cast(  void(*)(void),    f  )
+# define XTESTS_VOID_FUNCTION_CAST_(f)                      stlsoft_c_cast(  void(*)(void),    f  )
 
 
 
 #endif /* !XTESTS_DOCUMENTATION_SKIP_SECTION */
 
 /* /////////////////////////////////////////////////////////////////////////
- * Constants & definitions
+ * constants & definitions
  */
 
 /** Flags to be passed to xtests_startRunner
@@ -502,7 +502,6 @@ typedef enum xtests_runner_flags_t xtests_runner_flags_t;
                                                                                         \
     (0 == XTESTS_NS_C_QUAL(xtests_startRunner)((name), (verbosity), NULL, NULL, NULL, 0, NULL, NULL, NULL))
 
-
 /** \def XTESTS_START_RUNNER_WITH_SETUP_FNS(name, verbosity, setup, teardown, setupParam)
  *
  * \ingroup group__xtests__test_runner_functions
@@ -526,7 +525,6 @@ typedef enum xtests_runner_flags_t xtests_runner_flags_t;
                                                                                             \
     (0 == XTESTS_NS_C_QUAL(xtests_startRunner)((name), (verbosity), NULL, NULL, NULL, 0, (setup), (teardown), (setupParam)))
 
-
 /** \def XTESTS_START_RUNNER_WITH_STREAM(name, verbosity, stm)
  *
  * \ingroup group__xtests__test_runner_functions
@@ -543,7 +541,6 @@ typedef enum xtests_runner_flags_t xtests_runner_flags_t;
 #define XTESTS_START_RUNNER_WITH_STREAM(name, verbosity, stm)                       \
                                                                                     \
     (0 == XTESTS_NS_C_QUAL(xtests_startRunner)((name), (verbosity), NULL, NULL, stm, 0, NULL, NULL, NULL))
-
 
 /** \def XTESTS_START_RUNNER_WITH_REPORTER(name, verbosity, reporter, reporterParam)
  *
@@ -564,7 +561,6 @@ typedef enum xtests_runner_flags_t xtests_runner_flags_t;
                                                                                     \
     (0 == XTESTS_NS_C_QUAL(xtests_startRunner)((name), (verbosity), (reporter), (reporterParam), NULL, 0, NULL, NULL, NULL))
 
-
 /** \def XTESTS_START_RUNNER_WITH_REPORTER_AND_STREAM(name, verbosity, reporter, reporterParam, stm)
  *
  * \ingroup group__xtests__test_runner_functions
@@ -584,7 +580,6 @@ typedef enum xtests_runner_flags_t xtests_runner_flags_t;
 #define XTESTS_START_RUNNER_WITH_REPORTER_AND_STREAM(name, verbosity, reporter, reporterParam, stm) \
                                                                                                     \
     (0 == XTESTS_NS_C_QUAL(xtests_startRunner)((name), (verbosity), (reporter), (reporterParam), stm, 0, NULL, NULL, NULL))
-
 
 /** \def XTESTS_START_RUNNER_WITH_REPORTER_AND_STREAM_AND_FLAGS(name, verbosity, reporter, reporterParam, stm, flags)
  *
@@ -607,7 +602,6 @@ typedef enum xtests_runner_flags_t xtests_runner_flags_t;
 #define XTESTS_START_RUNNER_WITH_REPORTER_AND_STREAM_AND_FLAGS(name, verbosity, reporter, reporterParam, stm, flags)    \
                                                                                                                         \
     (0 == XTESTS_NS_C_QUAL(xtests_startRunner)((name), (verbosity), (reporter), (reporterParam), (stm), (flags), NULL, NULL, NULL))
-
 
 /** \def XTESTS_START_RUNNER_WITH_REPORTER_AND_STREAM_AND_FLAGS_AND_SETUP_FNS(name, verbosity, reporter, reporterParam, stm, flags, setup, teardown, setupParam)
  *
@@ -635,7 +629,6 @@ typedef enum xtests_runner_flags_t xtests_runner_flags_t;
                                                                                                                                                                 \
     (0 == XTESTS_NS_C_QUAL(xtests_startRunner)((name), (verbosity), (reporter), (reporterParam), (stm), (flags), (setup), (teardown), (setupParam)))
 
-
 /** \def XTESTS_START_RUNNER_WITH_FLAGS(name, verbosity, flags)
  *
  * \ingroup group__xtests__test_runner_functions
@@ -654,7 +647,6 @@ typedef enum xtests_runner_flags_t xtests_runner_flags_t;
                                                                                         \
     (0 == XTESTS_NS_C_QUAL(xtests_startRunner)((name), (verbosity), NULL, NULL, NULL, (flags), NULL, NULL, NULL))
 
-
 /** \def XTESTS_PRINT_RESULTS()
  *
  * \ingroup group__xtests__test_runner_functions
@@ -670,7 +662,6 @@ typedef enum xtests_runner_flags_t xtests_runner_flags_t;
                                                                                         \
     XTESTS_NS_C_QUAL(xtests_printRunnerResults)()
 
-
 /** \def XTESTS_END_RUNNER()
  *
  * \ingroup group__xtests__test_runner_functions
@@ -681,7 +672,6 @@ typedef enum xtests_runner_flags_t xtests_runner_flags_t;
                                                                                         \
     XTESTS_NS_C_QUAL(xtests_endRunner)(NULL)
 
-
 /** \def XTESTS_ABEND(terminationMessage)
  *
  * \ingroup group__xtests__test_runner_functions
@@ -691,7 +681,6 @@ typedef enum xtests_runner_flags_t xtests_runner_flags_t;
 #define XTESTS_ABEND(terminationMessage)                                                \
                                                                                         \
     XTESTS_NS_C_QUAL(xtests_abend)(terminationMessage)
-
 
 /** \def XTESTS_END_RUNNER_UPDATE_EXITCODE()
  *
@@ -712,9 +701,6 @@ typedef enum xtests_runner_flags_t xtests_runner_flags_t;
                                                                                         \
     stlsoft_static_cast(void, XTESTS_NS_C_QUAL(xtests_endRunner)(retCode))
 
-
-
-
 /** \def XTESTS_CASE_BEGIN(name, desc)
  *
  * \ingroup group__xtests__test_case_functions
@@ -728,7 +714,6 @@ typedef enum xtests_runner_flags_t xtests_runner_flags_t;
 #define XTESTS_CASE_BEGIN(name, desc)                                                   \
                                                                                         \
     (0 == XTESTS_NS_C_QUAL(xtests_beginTestCase)((name), (desc)))
-
 
 /** \def XTESTS_CASE_END(name, desc)
  *
@@ -744,7 +729,6 @@ typedef enum xtests_runner_flags_t xtests_runner_flags_t;
 #define XTESTS_CASE_END(name)                                                           \
                                                                                         \
     stlsoft_static_cast(void, XTESTS_NS_C_QUAL(xtests_endTestCase)((name)))
-
 
 /** \def XTESTS_RUN_CASE_WITH_NAME_AND_DESC(name, desc, fn)
  *
@@ -764,7 +748,6 @@ typedef enum xtests_runner_flags_t xtests_runner_flags_t;
 #define XTESTS_RUN_CASE_WITH_NAME_AND_DESC(name, desc, fn)                              \
                                                                                         \
     XTESTS_RUN_CASE_WITH_NAME_AND_DESC_(__FILE__, __LINE__, name, desc, fn)
-
 
 /** \def XTESTS_RUN_CASE_WITH_DESC(fn, desc)
  *
@@ -800,7 +783,6 @@ typedef enum xtests_runner_flags_t xtests_runner_flags_t;
 #define XTESTS_RUN_CASE(fn)                                                             \
                                                                                         \
     XTESTS_RUN_CASE_WITH_NAME_AND_DESC_(__FILE__, __LINE__, #fn, "", fn)
-
 
 #ifdef STLSOFT_CF_EXCEPTION_SUPPORT
 
@@ -865,7 +847,6 @@ typedef enum xtests_runner_flags_t xtests_runner_flags_t;
     XTESTS_RUN_CASE_THAT_THROWS_WITH_NAME_AND_DESC_(__FILE__, __LINE__, #fn, "", fn, type)
 
 #endif /* STLSOFT_CF_EXCEPTION_SUPPORT */
-
 
 /** \def XTESTS_TEST_FAIL_WITH_QUALIFIER(msg, qualifier)
  *
@@ -966,7 +947,7 @@ typedef enum xtests_runner_flags_t xtests_runner_flags_t;
  * \note This can only be invoked after a successful invocation of
  *   XTESTS_CASE_BEGIN() and before invocation of XTESTS_CASE_END().
  */
-#define XTESTS_TEST_ENUM_EQUAL(expected, actual)                    XTESTS_TEST_INTEGER_EQUAL_EXACT(stlsoft_static_cast(int, (expected)), stlsoft_static_cast(int, (actual)))
+#define XTESTS_TEST_ENUM_EQUAL(expected, actual)            XTESTS_TEST_INTEGER_EQUAL_EXACT(stlsoft_static_cast(int, (expected)), stlsoft_static_cast(int, (actual)))
 
 /** \def XTESTS_TEST_ENUM_NOT_EQUAL(expected, actual)
  *
@@ -982,7 +963,7 @@ typedef enum xtests_runner_flags_t xtests_runner_flags_t;
  * \note This can only be invoked after a successful invocation of
  *   XTESTS_CASE_BEGIN() and before invocation of XTESTS_CASE_END().
  */
-#define XTESTS_TEST_ENUM_NOT_EQUAL(expected, actual)                XTESTS_TEST_INTEGER_NOT_EQUAL(stlsoft_static_cast(int, (expected)), stlsoft_static_cast(int, (actual)))
+#define XTESTS_TEST_ENUM_NOT_EQUAL(expected, actual)        XTESTS_TEST_INTEGER_NOT_EQUAL(stlsoft_static_cast(int, (expected)), stlsoft_static_cast(int, (actual)))
 
 
 /* /////////////////////////////////////////////////////////
@@ -1143,7 +1124,6 @@ typedef enum xtests_runner_flags_t xtests_runner_flags_t;
     (!XTESTS_NS_C_QUAL(xTests_hasRequiredConditionFailed()) &&                          \
     XTESTS_NS_CPP_QUAL(xtests_test_integer_any_in_range(__FILE__, __LINE__, XTESTS_GET_FUNCTION_(), "XTESTS_TEST_INTEGER_EQUAL_ANY_IN_RANGE(" #begin ", " #end ", " #actual ")", (begin), (end), (actual), XTESTS_NS_C_QUAL(xtestsComparisonNotEqual))))
 
-
 #if 0
 /** \def XTESTS_TEST_INTEGER_EQUAL_ANY_OF(expected, actual)
  *
@@ -1229,7 +1209,6 @@ typedef enum xtests_runner_flags_t xtests_runner_flags_t;
     ,   (expected2)                                                                     \
     , XTESTS_NS_C_QUAL(xtestsComparisonEqual)))                                         \
     )
-
 
 
 /* /////////////////////////////////////////////////////////
@@ -1416,9 +1395,8 @@ typedef enum xtests_runner_flags_t xtests_runner_flags_t;
     XTESTS_NS_CPP_QUAL(xtests_test_character(__FILE__, __LINE__, XTESTS_GET_FUNCTION_(), "", (expected), (actual), XTESTS_NS_C_QUAL(xtestsComparisonLessThanOrEqual))))
 
 
-
 /* /////////////////////////////////////////////////////////
- * Test floating-points
+ * test floating-points
  */
 
 /** \def XTESTS_TEST_FLOATINGPOINT_EQUAL_EXACT(expected, actual)
@@ -1492,8 +1470,6 @@ typedef enum xtests_runner_flags_t xtests_runner_flags_t;
     XTESTS_NS_CPP_QUAL(xtests_test_floating_point(__FILE__, __LINE__, XTESTS_GET_FUNCTION_(), "", (expected), (actual), XTESTS_NS_C_QUAL(xtestsComparisonApproxNotEqual))))
 
 
-
-
 /* Requiring tests
  *
  * These cause an exception of type XXXXX to be thrown if the condition
@@ -1514,9 +1490,9 @@ typedef enum xtests_runner_flags_t xtests_runner_flags_t;
  * \note This is only available in C++ compilation units
  */
 # if defined(STLSOFT_CF_EXCEPTION_SUPPORT)
-#  define XTESTS_REQUIRE(test)                                          XTESTS_NS_CPP_QUAL(xtests_require)(!(!(test)))
+#  define XTESTS_REQUIRE(test)                              XTESTS_NS_CPP_QUAL(xtests_require)(!(!(test)))
 # else /* STLSOFT_CF_EXCEPTION_SUPPORT */
-#  define XTESTS_REQUIRE(test)                                          XTESTS_NS_C_QUAL(xtests_require_C)(!(!(test)))
+#  define XTESTS_REQUIRE(test)                              XTESTS_NS_C_QUAL(xtests_require_C)(!(!(test)))
 # endif /* STLSOFT_CF_EXCEPTION_SUPPORT */
 
 #else /* ? !_XTESTS_NO_CPP_API */
@@ -1617,7 +1593,6 @@ typedef enum xtests_runner_flags_t xtests_runner_flags_t;
  *   XTESTS_CASE_BEGIN() and before invocation of XTESTS_CASE_END().
  */
 #define XTESTS_TEST_CHARACTER_EQUAL(expected, actual)                   XTESTS_TEST_CHARACTER_EQUAL_EXACT(expected, actual)
-
 
 
 /* /////////////////////////////////////////////////////////
@@ -2099,6 +2074,7 @@ typedef enum xtests_runner_flags_t xtests_runner_flags_t;
                                                                                         \
     (!XTESTS_NS_C_QUAL(xTests_hasRequiredConditionFailed()) &&                          \
     XTESTS_NS_C_QUAL(xtests_testWideStringSlice)(__FILE__, __LINE__, XTESTS_GET_FUNCTION_(), "", XTESTS_GET_EXPECTED_SLICE_WIDE_(expected), (actual).len, (actual).ptr, XTESTS_NS_C_QUAL(xtestsComparisonEqual)))
+
 
 /* /////////////////////////////////////////////////////////
  * test pointers
@@ -4224,7 +4200,7 @@ namespace c
 
 #ifdef _XTESTS_NO_CPP_API
 
-# define XTESTS_REQUIRE(test)          XTESTS_NS_C_QUAL(xtests_require_C)(!(!(test)))
+# define XTESTS_REQUIRE(test)                               XTESTS_NS_C_QUAL(xtests_require_C)(!(!(test)))
 
 #endif /* _XTESTS_NO_CPP_API */
 
@@ -4356,10 +4332,10 @@ xtests_commandLine_parseHelp(
  */
 
 #ifndef XTESTS_DOCUMENTATION_SKIP_SECTION
-# define XTESTS_FAIL_WITH_QUALIFIER(msg, qualifier)     XTESTS_TEST_FAIL_WITH_QUALIFIER(msg, qualifier)
-# define XTESTS_FAIL(msg)                               XTESTS_TEST_FAIL(msg)
-# define XTESTS_PASSED()                                XTESTS_TEST_PASSED()
-# define XTESTS_TEST_MULTIBYTE_STRINGS_EQUAL            XTESTS_TEST_MULTIBYTE_STRING_EQUAL
+# define XTESTS_FAIL_WITH_QUALIFIER(msg, qualifier)         XTESTS_TEST_FAIL_WITH_QUALIFIER(msg, qualifier)
+# define XTESTS_FAIL(msg)                                   XTESTS_TEST_FAIL(msg)
+# define XTESTS_PASSED()                                    XTESTS_TEST_PASSED()
+# define XTESTS_TEST_MULTIBYTE_STRINGS_EQUAL                XTESTS_TEST_MULTIBYTE_STRING_EQUAL
 #endif /* !XTESTS_DOCUMENTATION_SKIP_SECTION */
 
 /* /////////////////////////////////////////////////////////////////////////
