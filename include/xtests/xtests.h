@@ -5,7 +5,7 @@
  *          library.
  *
  * Created: 20th June 1999
- * Updated: 7th December 2023
+ * Updated: 8th December 2023
  *
  * Home:    https://github.com/synesissoftware/xTests/
  *
@@ -52,8 +52,8 @@
 #ifndef XTESTS_DOCUMENTATION_SKIP_SECTION
 # define XTESTS_VER_XTESTS_H_XTESTS_MAJOR       3
 # define XTESTS_VER_XTESTS_H_XTESTS_MINOR       41
-# define XTESTS_VER_XTESTS_H_XTESTS_REVISION    7
-# define XTESTS_VER_XTESTS_H_XTESTS_EDIT        347
+# define XTESTS_VER_XTESTS_H_XTESTS_REVISION    8
+# define XTESTS_VER_XTESTS_H_XTESTS_EDIT        348
 #endif /* !XTESTS_DOCUMENTATION_SKIP_SECTION */
 
 /* /////////////////////////////////////////////////////////////////////////
@@ -1515,7 +1515,7 @@ typedef enum xtests_runner_flags_t xtests_runner_flags_t;
 
 
 /* /////////////////////////////////////////////////////////
- * test integers
+ * test macros simplified
  */
 
 /** \def XTESTS_TEST_INTEGER_EQUAL(expected, actual)

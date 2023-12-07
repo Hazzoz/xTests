@@ -64,11 +64,14 @@ file.
 
 | Function Name & Usage (Test case functions)                                                                                        |
 |:-----------------------------------------------------------------------------------------------------------------------------------|
-|`XTESTS_CASE_BEGIN(name, desc)`<br>Begins a test case, of the given name and description<br>- param **name** The name of the test case<br>param **desc** The description of the test case. May be <code>NULL</code> or the empty string (<code>""</code>). |
-|`XTESTS_CASE_END(name, desc)`<br>Ends the current test case<br>- param **name** The name of the test case<br>- note The <code>name</code> parameter is ignored in the current implementation, which can only run one test case at a time. |
-|`XTESTS_RUN_CASE_WITH_NAME_AND_DESC(name, desc, fn)`<br>Runs the given test case function, specifying a name and description<br>- param **name** Name of the test case<br>- param **desc** Description of the test case<br>- param **fn** A function, taking no parameters and returning <code>void</code>, that executes a number of tests representing a test case.<br>- note This can only be invoked after a successful invocation of XTESTS_CASE_BEGIN() and before invocation of XTESTS_CASE_END(). |
+|`XTESTS_CASE_BEGIN(name, desc)`<br>Begins a test case, of the given name and description.<br>- param **name** The name of the test case<br>- param **desc** The description of the test case. May be <code>NULL</code> or the empty string (<code>""</code>). |
+|`XTESTS_CASE_END(name, desc)`<br>Ends the current test case<br>- param **name** The name of the test case<br>**Note**: The <code>name</code> parameter is ignored in the current implementation, which can only run one test case at a time.|
+|`XTESTS_RUN_CASE_WITH_NAME_AND_DESC(name, desc, fn)`<br>Runs the given test case function, specifying a name and description.<br>- param **name** Name of the test case<br>- param **desc** Description of the test case<br>- param **fn** A function, taking no parameters and returning <code>void</code>, that executes a number of tests representing a test case.<br>**Note**: This can only be invoked after a successful invocation of `XTESTS_CASE_BEGIN()` and before invocation of `XTESTS_CASE_END()`.|
 |`XTESTS_RUN_CASE_WITH_DESC(fn, desc)`<br>Runs the given test case function, specifying a description<br>- param **fn** A function, taking no parameters and returning <code>void</code>, that executes a number of tests representing a test case.<br>- param **desc** Description of the test case<br>- note This can only be invoked after a successful invocation of XTESTS_CASE_BEGIN() and before invocation of XTESTS_CASE_END(). |
-|`XTESTS_RUN_CASE(fn)`<br>Runs the given test case function<br>- param **fn** A function, taking no parameters and returning <code>void</code>, that executes a number of tests representing a test case.<br>- note This can only be invoked after a successful invocation of XTESTS_CASE_BEGIN() and before invocation of XTESTS_CASE_END(). |
+|`XTESTS_RUN_CASE(fn)`<br>Runs the given test case function<br>- param **fn** A function, taking no parameters and returning <code>void</code>, that executes a number of tests representing a test case.<br>**Note**: This can only be invoked after a successful invocation of `XTESTS_CASE_BEGIN()` and before invocation of `XTESTS_CASE_END()`.|
+|`XTESTS_RUN_CASE_THAT_THROWS(fn, type)`<br>[C++-only] Runs the given test case function.<br>- param **fn** A function, taking no parameters and returning <code>void</code>, that executes a number of tests representing a test case;<br>- param **type** The type of the exception that is expected to be thrown;<br>**Note**: This can only be invoked after a successful invocation of `XTESTS_CASE_BEGIN()` and before invocation of `XTESTS_CASE_END()`.|
+|`XTESTS_RUN_CASE_THAT_THROWS_WITH_DESC(fn, desc, type)`<br>[C++-only] Runs the given test case function.<br>- param **fn** A function, taking no parameters and returning <code>void</code>, that executes a number of tests representing a test case;<br>- param **desc** Description of the test case;<br>- param **type** The type of the exception that is expected to be thrown;<br>**Note**: This can only be invoked after a successful invocation of `XTESTS_CASE_BEGIN()` and before invocation of `XTESTS_CASE_END()`.|
+|`XTESTS_RUN_CASE_THAT_THROWS_WITH_NAME_AND_DESC(name, desc, fn, type)`<br>[C++-only] Runs the given test case function.<br>- param **name** Name of the test case;<br>- param **desc** Description of the test case;<br>- param **fn** A function, taking no parameters and returning <code>void</code>, that executes a number of tests representing a test case;<br>- param **type** The type of the exception that is expected to be thrown;<br>**Note**: This can only be invoked after a successful invocation of `XTESTS_CASE_BEGIN()` and before invocation of `XTESTS_CASE_END()`.|
 
  </details>
 </blockquote>
@@ -87,16 +90,14 @@ file.
 
 | Category |Test Item                                                              |
 |:---------|:----------------------------------------------------------------------|
-| Integer  |XTESTS_TEST_INTEGER_EQUAL_EXACT(expected, actual)                      |
+| Integer  |XTESTS_TEST_INTEGER_EQUAL(expected, actual)                            |
 | Integer  |XTESTS_TEST_INTEGER_NOT_EQUAL(expected, actual)                        |
 | Integer  |XTESTS_TEST_INTEGER_GREATER(expected, actual)                          |
 | Integer  |XTESTS_TEST_INTEGER_LESS(expected, actual)                             |
 | Integer  |XTESTS_TEST_INTEGER_GREATER_OR_EQUAL(expected, actual)                 |
 | Integer  |XTESTS_TEST_INTEGER_LESS_OR_EQUAL(expected, actual)                    |
-| Integer  |XTESTS_TEST_INTEGER_LESS_OR_EQUAL(expected, actual)                    |
 | Integer  |XTESTS_TEST_INTEGER_EQUAL_ANY_IN_RANGE(expected, actual)               |
 | Integer  |XTESTS_TEST_INTEGER_EQUAL_ANY_NOT_IN_RANGE(expected, actual)           |
-| Integer  |XTESTS_TEST_INTEGER_EQUAL_OF(expected, actual)                         |
 | Integer  |XTESTS_TEST_INTEGER_EQUAL_OF2(expected1, expected2, actual)            |
 | Integer  |XTESTS_TEST_INTEGER_EQUAL_OF3(expected1, expected2, expectd3, actual)  |
 
@@ -109,6 +110,8 @@ file.
 |:---------|:----------------------------------------------------------------------|
 | F-Point  |XTESTS_TEST_FLOATINGPOINT_EQUAL_APPROX(expected, actual)               |
 | F-Point  |XTESTS_TEST_FLOATINGPOINT_NOT_EQUAL_APPROX(expected, actual)           |
+| F-Point  |XTESTS_TEST_FLOATINGPOINT_EQUAL_EXACT(expected, actual)                |
+| F-Point  |XTESTS_TEST_FLOATINGPOINT_NOT_EQUAL_EXACT(expected, actual)            |
 
   </details>
 
@@ -124,7 +127,7 @@ file.
 
 | Category |Test Item                                                              |
 |:---------|:----------------------------------------------------------------------|
-| Character|XTESTS_TEST_CHARACTER_EQUAL_EXACT(expected, actual)                    |
+| Character|XTESTS_TEST_CHARACTER_EQUAL(expected, actual)                          |
 | Character|XTESTS_TEST_CHARACTER_NOT_EQUAL(expected, actual)                      |
 | Character|XTESTS_TEST_CHARACTER_GREATER(expected, actual)                        |
 | Character|XTESTS_TEST_CHARACTER_LESS(expected, actual)                           |
@@ -222,6 +225,21 @@ file.
 
  </details>
 
+ <!-- direct results -->
+ <details>
+ <summary markdown="span">Directed-result Assertion Macros</summary>
+
+| Category |Test Item                                                              |
+|:---------|:----------------------------------------------------------------------|
+| Utility  |XTESTS_TEST_PASSED()                                                   |
+| Utility  |XTESTS_TEST_FAIL(msg)                                                  |
+| Utility  |XTESTS_TEST_FAIL_WITH_QUALIFIER(msg, qualifier)                        |
+| Utility  |XTESTS_TEST(expr)                                                      |
+| Utility  |XTESTS_TEST_WITH_MESSAGE(expr, msg)                                    |
+| Utility  |XTESTS_REQUIRE(test)                                                   |
+
+ </details>
+
 </blockquote>
 </details>
 
@@ -234,6 +252,7 @@ file.
 | Function Name & Usage (Utility functions)  |
 |:-------------------------------------------|
 |`XTESTS_COMMANDLINE_PARSE_VERBOSITY(argc, argv, pverbosity)`<br>Parses the verbosity from the command-line arguments, looking for an argument of the form `"--verbosity=<N>"`, where `N` is a non-negative integer.<br>- param `argc`  The `argc` parameter passed into `main()`;<br>- param `argv` The `argv` parameter passed into `main()`;<br>- param `pverbosity` A pointer to an integer to receive the verbosity. Will be set to `xtestsVerbositySummaryOnSuccess` upon success, or if no verbosity argument is found. May not be `NULL`;|
+|`XTESTS_COMMANDLINE_PARSE_VERBOSITY_WITH_DEFAULT(argc, argv, pverbosity, defaultVerbosity)`<br>Parses the verbosity from the command-line arguments, looking for an argument of the form `"--verbosity=<N>"`, where `N` is a non-negative integer.<br>- param `argc`  The `argc` parameter passed into `main()`;<br>- param `argv` The `argv` parameter passed into `main()`;<br>- param `pverbosity` A pointer to an integer to receive the verbosity. Will be set to `xtestsVerbositySummaryOnSuccess` upon success, or if no verbosity argument is found. May not be `NULL`;<br>- param `defaultVerbosity` The default verbosity to be applied if none specified on the command-line|
 |`XTESTS_COMMANDLINE_PARSE_HELP(argc, argv)`<br>Parses the `"--help"` flag from the command-line and, if found, issues usage information to the standard output stream and exits (with `EXIT_SUCCESS`).<br>- param `argc`  The `argc` parameter passed into `main()`;<br>- param `argv` The `argv` parameter passed into `main()`;|
 
  </details>
