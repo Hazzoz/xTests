@@ -134,6 +134,30 @@ file.
   </details>
 
   <details>
+  <summary markdown="span">String - Multibyte Macros</summary>
+
+| Category |Test Item                                                              |
+|:----------|:---------------------------------------------------------------------|
+| Multibyte |XTESTS_TEST_MULTIBYTE_STRING_EQUAL(expected, actual)                  |
+| Multibyte |XTESTS_TEST_MULTIBYTE_STRING_EQUAL_APPROX(expected, actual)           |
+| Multibyte |XTESTS_TEST_MULTIBYTE_STRING_NOT_EQUAL(expected, actual)              |
+| Multibyte |XTESTS_TEST_MULTIBYTE_STRING_NOT_EQUAL_APPROX(expected, actual)       |
+| Multibyte |XTESTS_TEST_MULTIBYTE_STRING_EQUAL_N(expected, actual, n)             |
+| Multibyte |XTESTS_TEST_MULTIBYTE_STRING_EQUAL_N_APPROX(expected, actual, n)      |
+| Multibyte |XTESTS_TEST_MULTIBYTE_STRING_NOT_EQUAL_N(expected, actual, n)         |
+| Multibyte |XTESTS_TEST_MULTIBYTE_STRING_NOT_EQUAL_N_APPROX(expected, actual, n)  |
+| Multibyte |XTESTS_TEST_MULTIBYTE_STRING_CONTAIN(expected, actual)                |
+| Multibyte |XTESTS_TEST_MULTIBYTE_STRING_CONTAIN_APPROX(expected, actual)         |
+| Multibyte |XTESTS_TEST_MULTIBYTE_STRING_NOT_CONTAIN(expected, actual)            |
+| Multibyte |XTESTS_TEST_MULTIBYTE_STRING_NOT_CONTAIN_APPROX(expected, actual)     |
+| Multibyte |XTESTS_TEST_MULTIBYTE_STRING_SLICE_EQUAL(expected, actual)            |
+| Multibyte |XTESTS_TEST_MULTIBYTE_STRING_MATCHES(pattern, value) <sup>1</sup>     |
+
+<em>1</em> `XTESTS_TEST_MULTIBYTE_STRING_MATCHES` is only enabled in the presence of the [**shwild**](https://github.com/synesissoftware/shwild) library - i.e. when the **shwild/shwild.h** header is detected - to avoid an undue (and circular, since **shwild** uses **xTests**) dependency.
+
+  </details>
+
+  <details>
   <summary markdown="span">String - Wide Macros</summary>
 
 | Category |Test Item                                                              |
@@ -151,30 +175,6 @@ file.
 | Wide     |XTESTS_TEST_WIDE_STRING_NOT_CONTAIN(expected, actual)                  |
 | Wide     |XTESTS_TEST_WIDE_STRING_NOT_CONTAIN_APPROX(expected, actual)           |
 | Wide     |XTESTS_TEST_WIDE_STRING_SLICE_EQUAL(expected, actual)                  |
-
-  </details>
-
-  <details>
-  <summary markdown="span">String - MBCS Macros</summary>
-
-| Category |Test Item                                                              |
-|:---------|:----------------------------------------------------------------------|
-| MBCS     |XTESTS_TEST_MULTIBYTE_STRING_EQUAL(expected, actual)                   |
-| MBCS     |XTESTS_TEST_MULTIBYTE_STRING_EQUAL_APPROX(expected, actual)            |
-| MBCS     |XTESTS_TEST_MULTIBYTE_STRING_NOT_EQUAL(expected, actual)               |
-| MBCS     |XTESTS_TEST_MULTIBYTE_STRING_NOT_EQUAL_APPROX(expected, actual)        |
-| MBCS     |XTESTS_TEST_MULTIBYTE_STRING_EQUAL_N(expected, actual, n)              |
-| MBCS     |XTESTS_TEST_MULTIBYTE_STRING_EQUAL_N_APPROX(expected, actual, n)       |
-| MBCS     |XTESTS_TEST_MULTIBYTE_STRING_NOT_EQUAL_N(expected, actual, n)          |
-| MBCS     |XTESTS_TEST_MULTIBYTE_STRING_NOT_EQUAL_N_APPROX(expected, actual, n)   |
-| MBCS     |XTESTS_TEST_MULTIBYTE_STRING_CONTAIN(expected, actual)                 |
-| MBCS     |XTESTS_TEST_MULTIBYTE_STRING_CONTAIN_APPROX(expected, actual)          |
-| MBCS     |XTESTS_TEST_MULTIBYTE_STRING_NOT_CONTAIN(expected, actual)             |
-| MBCS     |XTESTS_TEST_MULTIBYTE_STRING_NOT_CONTAIN_APPROX(expected, actual)      |
-| MBCS     |XTESTS_TEST_MULTIBYTE_STRING_SLICE_EQUAL(expected, actual)             |
-| MBCS     |XTESTS_TEST_MULTIBYTE_STRING_MATCHES(pattern, value) <sup>1</sup>      |
-
-<em>1</em> `XTESTS_TEST_MULTIBYTE_STRING_MATCHES` is only enabled in the presence of the [**shwild**](https://github.com/synesissoftware/shwild) library - i.e. when the **shwild/shwild.h** header is detected - to avoid an undue (and circular, since **shwild** uses **xTests**) dependency.
 
   </details>
 
