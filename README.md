@@ -80,10 +80,10 @@ file.
 
  <!-- integers and floating-point -->
  <details>
- <summary markdown="span">Numeric - Integer, Floating Point  XTEST Macros</summary>
+ <summary markdown="span">Numeric - Integer, Floating Point - Assertion Macros</summary>
  <blockquote>
   <details>
-  <summary markdown="span">Integer XTEST Macros</summary>
+  <summary markdown="span">Integer Assertion Macros</summary>
 
 | Category |Test Item                                                              |
 |:---------|:----------------------------------------------------------------------|
@@ -103,7 +103,7 @@ file.
   </details>
 
   <details>
-  <summary markdown="span">Floating Point XTEST Macros</summary>
+  <summary markdown="span">Floating Point Assertion Macros</summary>
 
 | Category |Test Item                                                              |
 |:---------|:----------------------------------------------------------------------|
@@ -117,10 +117,10 @@ file.
 
  <!-- characters and strings -->
  <details>
- <summary markdown="span">Character/Wide String/Multi-Byte String XTEST Macros</summary>
+ <summary markdown="span">Character/String (Multi-Byte and Wide) Assertion Macros</summary>
  <blockquote>
   <details>
-  <summary markdown="span">Character XTEST Macros</summary>
+  <summary markdown="span">Character Assertion Macros</summary>
 
 | Category |Test Item                                                              |
 |:---------|:----------------------------------------------------------------------|
@@ -183,7 +183,7 @@ file.
 
  <!-- booleans -->
  <details>
- <summary markdown="span">Boolean XTEST Macros</summary>
+ <summary markdown="span">Boolean Assertion Macros</summary>
 
 | Category |Test Item                                                              |
 |:---------|:----------------------------------------------------------------------|
@@ -196,7 +196,7 @@ file.
 
  <!-- enums -->
  <details>
- <summary markdown="span">Enum XTEST Macros</summary>
+ <summary markdown="span">Enum Assertion Macros</summary>
 
 | Category |Test Item                                                              |
 |:---------|:----------------------------------------------------------------------|
@@ -207,7 +207,7 @@ file.
 
  <!-- pointers -->
  <details>
- <summary markdown="span">Pointer XTEST Macros</summary>
+ <summary markdown="span">Pointer Assertion Macros</summary>
 
 | Category |Test Item                                                              |
 |:---------|:----------------------------------------------------------------------|
