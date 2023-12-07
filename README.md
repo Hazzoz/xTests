@@ -36,7 +36,7 @@ file.
 
 ## Components
 
-(Click :arrow_forward: To Expand/Contract the sections)
+(Click :arrow_forward: to expand/contract the sections)
 
 <details>
 <summary markdown="span">Test-runner and test-case functions that are used to set up the test context</summary>
@@ -136,7 +136,7 @@ file.
   <details>
   <summary markdown="span">String - Multibyte Macros</summary>
 
-| Category |Test Item                                                              |
+| Category  |Test Item                                                             |
 |:----------|:---------------------------------------------------------------------|
 | Multibyte |XTESTS_TEST_MULTIBYTE_STRING_EQUAL(expected, actual)                  |
 | Multibyte |XTESTS_TEST_MULTIBYTE_STRING_EQUAL_APPROX(expected, actual)           |
@@ -241,7 +241,7 @@ file.
  <details>
  <summary markdown="span">Miscellaneous constructs</summary>
 
-| constructs                                                                                                                       |
+| Constructs                                                                                                                       |
 |:---------------------------------------------------------------------------------------------------------------------------------|
 |`XTESTS_FLOATINGPOINT_FACTOR_SCOPE()`<br>[C++ only] Macro used to declare an instance of the class xtests::cpp::xtest_floatingpoint_factor_scope, which causes the floating point factor to be set to a new value for the lifetime of the object, and then returned to its prior value.|
 |`XTESTS_FP_APPROXIMATE_FACTOR(argc, argv)`<br>The factor within which floating point numbers are deemed to be approximately equal.|
