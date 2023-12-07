@@ -3193,6 +3193,8 @@ private:
 
 /** \def XTESTS_FLOATINGPOINT_FACTOR_SCOPE
  *
+ * \ingroup group__xtests__misc
+ *
  * [C++ only] Macro used to declare an instance of the
  * class xtests::cpp::xtest_floatingpoint_factor_scope, which causes the
  * floating point factor to be set to a new value for the lifetime of the
