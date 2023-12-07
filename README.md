@@ -199,7 +199,69 @@ file.
 
 ## Examples
 
-Examples are provided in the ```examples``` directory, along with a markdown description for each.
+Extensive examples are provided in the ```examples``` directory, along with a markdown description for each. Here, it is worth just providing a simplest-useful example, as shown below:
+
+```c
+/* file: example.c.factorial.c */
+#include <xtests/xtests.h>
+#include <stdio.h>
+#include <assert.h>
+
+/* a somewhat-flaky factorial function */
+int factorial(int v)
+{
+    assert(v >= 0);
+
+    switch (v)
+    {
+        case 0:
+        case 1:
+            return 1;
+        default:
+            return v * factorial(v - 1);
+    }
+}
+
+void test_factorial_edge_cases()
+{
+    XTESTS_TEST_INTEGER_EQUAL(1, factorial(0));
+    XTESTS_TEST_INTEGER_EQUAL(1, factorial(1));
+}
+
+int main(int argc, char* argv[])
+{
+    int retCode = EXIT_SUCCESS;
+    int verbosity;
+
+    XTESTS_COMMANDLINE_PARSE_VERBOSITY(argc, argv, &verbosity);
+
+    if (XTESTS_START_RUNNER("example.factorial.runner", verbosity))
+    {
+        /* runs test case "test_factorial_edge_cases" */
+        XTESTS_RUN_CASE_WITH_DESC(test_factorial_edge_cases, "checking edge cases");
+
+        /* runs test case "test-case-range" */
+        if (XTESTS_CASE_BEGIN("test-case-range", "checking wider range of input numbers"))
+        {
+            XTESTS_TEST_INTEGER_EQUAL(2, factorial(2));
+            XTESTS_TEST_INTEGER_EQUAL(6, factorial(3));
+            /* . . . */
+            XTESTS_TEST_INTEGER_EQUAL(479001600, factorial(12));
+
+            XTESTS_CASE_END("test-case-1");
+        }
+
+
+        XTESTS_PRINT_RESULTS();
+        XTESTS_END_RUNNER_UPDATE_EXITCODE(&retCode);
+    }
+
+    return retCode;
+}
+```
+
+**NOTE**: the language shown in **C**, but a **C++** version of this example program would be very similar. **C++** test programs have additiona support for facilities such as the throwing of exceptions.
+
 
 ## Project Information
 
