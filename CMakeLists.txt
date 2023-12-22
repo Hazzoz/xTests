@@ -9,6 +9,13 @@ project(xTests)
 
 include_directories(include)
 
+if (APPLE)
+
+    message("adding '/usr/local/include' to include-directories for 'test' (on OSX)")
+
+    include_directories("/usr/local/include")
+endif()
+
 if(NOT DEFINED STLSOFT AND NOT DEFINED ENV{STLSOFT})
 
     message(FATAL_ERROR "This build requires STLSOFT be defined as a CMake variable or an environment variable")
